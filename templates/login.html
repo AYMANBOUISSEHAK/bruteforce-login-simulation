@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentification — Brute Force Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>International University of Rabat. UIR</h1>
+        <p class="subtitle">Brute Force Login Simulation</p>
+    </div>
+
+    <h2>Authentication</h2>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Sign in</button>
+    </form>
+
+    {% if message %}
+        <p class="message {{ 'success' if 'réussie' in message else 'error' }}">
+            {{ message }}
+        </p>
+    {% endif %}
+
+    <div class="divider"></div>
+
+    <p class="info">
+        Total login attempts recorded:
+        <strong>{{ attempts }}</strong>
+    </p>
+
+    <p class="warning">
+        ⚠️ Vulnerable application
+    </p>
+
+</div>
+
+</div>
+
+</body>
+</html>
