@@ -2,8 +2,34 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentification — Brute Force Simulation</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .captcha-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 1.05em;
+        }
+        .captcha-container .label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .captcha-container input {
+            width: 120px;
+            padding: 8px 12px;
+            font-size: 1em;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .message.success { color: green; font-weight: bold; }
+        .message.error   { color: red; font-weight: bold; }
+    </style>
 </head>
 <body>
 
@@ -19,6 +45,16 @@
     <form method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
+
+        <!-- CAPTCHA TOUJOURS affiché en mode sécurisé -->
+        {% if request.args.get('mode') != 'vuln' %}
+        <div class="captcha-container">
+            <span class="label">Vérifiez que vous n'êtes pas un robot :</span>
+            <strong>{{ captcha_question if captcha_question else "Calcul en cours..." }}</strong> =
+            <input type="number" name="captcha" placeholder="Réponse" required>
+        </div>
+        {% endif %}
+
         <button type="submit">Sign in</button>
     </form>
 
@@ -35,11 +71,11 @@
         <strong>{{ attempts }}</strong>
     </p>
 
+    {% if request.args.get('mode') == 'vuln' %}
     <p class="warning">
-        ⚠️ Vulnerable application
+        ⚠️ Application vulnérable
     </p>
-
-</div>
+    {% endif %}
 
 </div>
 
