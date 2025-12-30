@@ -6,7 +6,7 @@ from rich.progress import Progress, BarColumn, TextColumn, TimeElapsedColumn
 
 # CONFIGURATION
 MODE = "vuln"        
-# MODE = "secure"     
+#MODE = "secure"     
 
 TARGET_URL = f"http://127.0.0.1:5000/?mode={MODE}" if MODE == "vuln" else "http://127.0.0.1:5000/" 
 

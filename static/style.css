@@ -5,61 +5,96 @@
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
+/* ===== Background académique ===== */
 body {
-    background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    background: linear-gradient(135deg, #0a2e5c, #0d6efd);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* ===== Carte principale ===== */
 .container {
-    width: 360px;
+    width: 380px;
     background: #ffffff;
-    padding: 30px 25px;
+    padding: 34px 30px;
     border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
     text-align: center;
 }
 
+/* ===== Header UIR ===== */
+.header {
+    margin-bottom: 22px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 14px;
+}
+
+.header h1 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0a2e5c;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #6c757d;
+    letter-spacing: 0.6px;
+}
+
+/* ===== Titre ===== */
 .container h2 {
-    margin-bottom: 20px;
+    margin: 18px 0 22px;
+    font-size: 20px;
+    font-weight: 600;
     color: #212529;
 }
 
+/* ===== Champs ===== */
 input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
+    padding: 13px 14px;
+    margin-bottom: 14px;
     border: 1px solid #ced4da;
     border-radius: 6px;
     font-size: 14px;
+    background-color: #f8f9fa;
 }
 
 input:focus {
     outline: none;
-    border-color: #0d6efd;
+    border-color: #0a2e5c;
+    background-color: #ffffff;
 }
 
+/* ===== Bouton ===== */
 button {
     width: 100%;
-    padding: 12px;
-    background-color: #0d6efd;
+    padding: 13px;
+    margin-top: 8px;
+    background-color: #0a2e5c;
     color: #ffffff;
     border: none;
     border-radius: 6px;
     font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
 }
 
 button:hover {
-    background-color: #0b5ed7;
+    background-color: #081f3f;
 }
 
+/* ===== Messages ===== */
 .message {
-    margin-top: 15px;
+    margin-top: 16px;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .message.success {
@@ -67,43 +102,46 @@ button:hover {
 }
 
 .message.error {
-    color: #dc3545;
+    color: #b02a37;
 }
 
+/* ===== Séparateur ===== */
 .divider {
-    margin: 20px 0;
+    margin: 22px 0;
     border-top: 1px solid #dee2e6;
 }
 
+/* ===== Infos ===== */
 .info {
     font-size: 13px;
     color: #495057;
 }
 
+/* ===== Warning vulnérable ===== */
 .warning {
     font-size: 12px;
-    color: #b02a37;
-    margin-top: 8px;
-}
-.header {
-    margin-bottom: 20px;
-}
-
-.header h1 {
-    font-size: 16px;
+    color: #842029;
+    margin-top: 10px;
     font-weight: 600;
+}
+
+/* ===== CAPTCHA ===== */
+.captcha-container {
+    margin: 18px 0;
+    padding: 14px;
+    background: #f1f5fb;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+}
+
+.captcha-container .label {
+    font-weight: 600;
+    color: #0a2e5c;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.captcha-container strong {
     color: #0d6efd;
-    margin-bottom: 4px;
-}
-
-.subtitle {
-    font-size: 12px;
-    color: #6c757d;
-    letter-spacing: 0.5px;
-}
-
-.container h2 {
-    margin: 15px 0 20px;
-    font-size: 20px;
-    color: #212529;
+    font-size: 16px;
 }
